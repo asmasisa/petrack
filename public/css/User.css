@@ -1,0 +1,611 @@
+/* Réinitialisation des marges et des rembourrages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Correction du modèle de boîte */
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #3a3939;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #333131;
+  padding: 10px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.navbar-header img {
+  height: 80px;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-block;
+}
+
+.search-bar input {
+  width: 320px; 
+  padding: 10px 35px 10px 10px; 
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  background-color: #eee;
+}
+
+.search-bar button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Ajout de l'icône de recherche */
+.search-bar input::placeholder {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+}
+
+/* Pour que l'icône de recherche soit visible */
+.search-bar input:focus::placeholder {
+  color: transparent;
+}
+
+.nav-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  height: auto; /* Ajustement automatique de la hauteur */
+  max-height: calc(100vh - 100px); /* Hauteur maximale en fonction de la hauteur de la fenêtre moins la hauteur de la barre supérieure */
+  overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+  background-color: #eee;
+  transition: left 0.3s ease;
+}
+.sidebar.show {
+  left: 0;
+}
+.submenu li:hover{
+
+  background-color: #d1d0d0;
+  border-radius: 10px;
+}
+.menu-list .ul1,
+.menu-list .ul2 {
+  background-color: #fff;
+  border-radius: 18px;
+  margin: 15px;
+  list-style: none;
+  list-style-type: none;
+
+}
+
+.menu-list li {
+  list-style-type: none;
+  padding: 15px;
+  margin: 5px;
+}
+
+.menu-list li:hover  {
+  background-color: #d1d0d0;
+  border-radius: 10px;
+}
+a:hover{
+  color: inherit;
+  text-decoration: none;
+}
+.logout{
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 15px;
+  margin: 5px;
+}
+.logout:hover{
+  background-color: #d1d0d0;
+  
+  border-radius: 10px;
+}
+.separator {
+  border-top: 2px solid #b8b5b5;
+  margin: 5px 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px;
+  padding-top: 180px;
+}
+
+.create-post {
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 20px; /* Ajustement du rembourrage */
+  background-color: #fff;
+}
+
+.user-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.post-input textarea {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #ccc; /* Légère modification de la couleur de la bordure */
+  border-radius: 18px;
+  resize: none;
+  padding: 10px; /* Ajustement du rembourrage */
+}
+
+.post-options {
+  margin-top: 15px; /* Ajustement de la marge pour l'espacement */
+}
+
+.post-options button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  margin-right: 15px; /* Ajustement de la marge pour l'espacement */
+}
+
+.post-btn {
+  background-color: #aa8287;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 12px 25px; /* Ajustement du rembourrage */
+  cursor: pointer;
+  margin-top: 15px; /* Ajustement de la marge pour l'espacement */
+}
+
+.post-btn:hover {
+  background-color: #8d5e63;
+}
+
+.posts {
+  margin-top: 30px; /* Ajustement de la marge pour l'espacement */
+}
+
+.post {
+  max-width: 600px;
+  border-radius: 10px;
+  margin-bottom: 30px; /* Ajustement de la marge pour l'espacement */
+  padding: 20px; /* Ajustement du rembourrage */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre légère */
+}
+
+.post-content {
+  flex: 1;
+  margin-left: 20px; /* Ajustement de la marge pour l'espacement */
+}
+
+.reactions button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  margin-right: 15px; /* Ajustement de la marge pour l'espacement */
+}
+
+.comments {
+  margin-top: 20px; /* Ajustement de la marge pour l'espacement */
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 15px; /* Ajustement de la marge pour l'espacement */
+}
+
+.comment p {
+  margin: 0;
+  margin-left: 20px; /* Ajustement de la marge pour l'espacement */
+}
+
+.add-comment {
+  display: flex;
+  margin-top: 20px; /* Ajustement de la marge pour l'espacement */
+}
+
+.add-comment input[type="text"] {
+  flex: 1;
+  padding: 8px; /* Ajustement du rembourrage */
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.add-comment button {
+  background-color: #aa8287;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  padding: 8px 15px; /* Ajustement du rembourrage */
+  cursor: pointer;
+}
+
+.add-comment button:hover {
+  background-color: #8d5e63;
+}
+
+/* Styles CSS pour le formulaire de profil d'animal domestique */
+
+#petProfileForm {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#petProfileForm h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333; /* Couleur de texte légèrement assombrie pour une meilleure lisibilité */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #555; /* Couleur de texte légèrement assombrie pour une meilleure lisibilité */
+}
+.form-group
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input[type="radio"] {
+  margin-right: 10px; /* Espacement légèrement augmenté entre les boutons radio */
+}
+
+ .btn_2 {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #77444f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px; /* Taille de police légèrement augmentée */
+}
+
+.btn_2:hover {
+  background-color: #ad8598;
+}
+ /*table des PETS*/
+ .pet-table {
+  margin-top: 20px;
+}
+
+.pet-table h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.pet-table {
+  margin-bottom: 20px;
+}
+
+.pet-table h2 {
+  margin-bottom: 20px;
+}
+
+.petable {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  border-radius: 18px;
+
+
+}
+
+.petable th,
+.petable td {
+  padding: 15px;
+  border: 1px solid #ddd; 
+}
+
+.petable th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  
+}
+
+.petable tbody tr:nth-child(even) {
+  background-color: #e9e9e9;
+
+}
+.petable td:first-child {
+  border-left: none; /* Supprime la bordure gauche */
+}
+
+.petable td:last-child {
+  border-right: none; /* Supprime la bordure droite */
+}
+
+/* Boutons d'action */
+.btn {
+  padding: 8px 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.btn-success {
+  background-color: #292935;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.profile-image-container {
+  width: 100px; /* ajustez la largeur et la hauteur selon vos besoins */
+  height: 100px;
+  border-radius: 50%; /* crée un cercle */
+  overflow: hidden; /* cache le contenu en dehors du cercle */
+}
+
+.profile-image-container img {
+  width: 100%; /* assurez-vous que l'image remplit le cercle */
+  height: auto;
+  display: block; /* rend l'image une boîte indépendante */
+}
+
+.messages-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 18px;
+
+}
+
+.left-panel, .right-panel {
+  width: 45%;
+  padding: 10px;
+}
+.left-panel input[type="text"]{
+  padding: 8px 16px;
+  width: 380px;
+  border-radius: 18px;
+  border: none;
+  background-color: #ccc;
+}
+.right-panel{
+  width: 60%;
+  background-color: #fff;
+  border-radius: 18px;
+  min-height:250px ;
+}
+.message-filters button{
+  padding: 8px;
+  margin-top: 20px;
+  width: 100px;
+  border:1px solid #bebdbd;
+  border-radius: 18px;
+}
+
+.message-list {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.message-item {
+  
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chat-messages {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.sent-message, .received-message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.sent-message {
+  background-color: #cce5ff;
+  align-self: flex-end;
+}
+
+.received-message {
+  background-color: #f2f2f2;
+  align-self: flex-start;
+}
+
+.message-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.message-input button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+.Agenda{
+max-width: 900px;
+}
+#calendar {
+  margin-bottom: 10px ;
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 18px;
+}
+#event-form {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+
+}
+#event-form h2{
+  padding-bottom: 25px;
+}
+#event-form input,
+#event-form textarea {
+  display: block;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: none;
+  border-bottom: 2px solid #c9c9c9;
+  background-color: #f9f9f9;
+}
+
+
+#event-form ::placeholder {
+ font-size: 14px;
+}
+
+
+#calendar button{
+  background-color: #aa8287;
+  
+}
+#calendar button:hover , #event-form button:hover{
+  background-color: #8d5e63;
+}
+#event-form button{
+  background-color: #aa8287;
+  width: 130px;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px; /* Ajustement du rembourrage */
+  cursor: pointer;
+}
+
+
+/*ESpace profil Propriétaire*/
+ .user-profile {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .profile-picture img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .pet-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pet-list li {
+            margin-bottom: 10px;
+        }
+        .card{
+          border-radius: 18px;
+
+        }
+
+        .settings-container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #f9f9f9;
+      }
+
+      .settings-title {
+          font-size: 24px;
+          margin-bottom: 20px;
+      }
+
+      .setting-item {
+          margin-bottom: 10px;
+      }
+
+      .setting-label {
+          font-weight: bold;
+      }
+
+      .setting-input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+
+      .save-button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      .save-button:hover {
+          background-color: #0056b3;
+      }
